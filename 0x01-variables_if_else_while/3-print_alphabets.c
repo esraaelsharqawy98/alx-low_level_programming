@@ -8,13 +8,12 @@ int main(void)
 {
 char alpha[26] = "abcdefghijklmnopqrstuvwxyz";
 char ALPHA[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-int i = 0;
+int i = 0, j = 0;
 while (i < 26)
 {
 putchar (alpha[i]);
 i++;
 }
-int j = 0;
 while (j < 26)
 {
 putchar (ALPHA[j]);
