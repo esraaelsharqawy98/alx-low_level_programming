@@ -10,11 +10,11 @@ char alpha[26] = "abcdefghijklmnopqrstuvwxyz";
 int i = 0;
 while (i < 26)
 {
-if (i != 'q' && i != 'e')
+if (i != 'q' || i != 'e')
 {
 putchar (alpha[i]);
-i++;
 }
+i++;
 }
 putchar ('\n');
 return (0);
