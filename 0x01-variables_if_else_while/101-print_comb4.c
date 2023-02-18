@@ -3,7 +3,7 @@
  * main - print the print all possible different combinations of three digits
  * Return: Always 0 (Success)
  */
-int main()
+int main(void)
 {
 int digit1, digit2, digit3;
 for (digit1 = 0; digit1 < 8; digit1++)
