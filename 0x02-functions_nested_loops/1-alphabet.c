@@ -6,10 +6,9 @@
 void print_alphabet(void)
 {
 char alpha[26] = "abcdefghijklmnopqrstuvwxyz";
-int i = 0;
-while (i < 26 )
-    _putchar(alpha[i]);
-    i++;
-
+int i;
+for (i=0; i<26; i++){
+_putchar(alpha[i]);
+}
 _putchar('\n');
 }
