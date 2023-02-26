@@ -12,7 +12,5 @@ while (i < 26 )
 _putchar(alpha[i]);
 i++;
 }
-
 _putchar('\n');
-return (0);
 }
