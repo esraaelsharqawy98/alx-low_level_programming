@@ -5,9 +5,8 @@
  */
 void print_alphabet(void)
 {
-char alpha[26] = "abcdefghijklmnopqrstuvwxyz";
-int i;
-for (i = 0; i < 26; i++)
-{_putchar(alpha[i]); }
+int letter;
+for (letter = 'a'; letter <= 'z'; letter++)
+{_putchar(letter); }
 _putchar('\n');
 }
