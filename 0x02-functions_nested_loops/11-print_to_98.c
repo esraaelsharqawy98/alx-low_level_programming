@@ -30,13 +30,13 @@ for (j = n; j >= 98; j--)
 {
 if (j != 98)
 {
-_putchar(i + '0');
+_putchar(j + '0');
 _putchar(',');
 _putchar(' ');
 }
 else if (j == 98)
 {
-_putchar(i + '0');
+_putchar(j + '0');
 _putchar('\n');
 }
 }
