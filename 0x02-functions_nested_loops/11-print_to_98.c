@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_to_98 - function that prints all natural numbers from n to 98, 
+ * print_to_98 - function that prints all natural numbers from n to 98,
  * followed by a new line.
  * @n: print from this number
  */
@@ -15,7 +15,7 @@ if (i != 98)
 {
 _putchar(i + '0');
 _putchar(',');
-_putchar(' ');
+_putchar('');
 }
 else if (i == 98)
 {
@@ -32,7 +32,7 @@ if (j != 98)
 {
 _putchar(j + '0');
 _putchar(',');
-_putchar(' ');
+_putchar('');
 }
 else if (j == 98)
 {
