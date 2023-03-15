@@ -1,67 +1,80 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
+
 /**
- * strtow - concatenates all the arguments of your program
- *@str: string
- *@av: arguments
- * Return: a pointer to a new string
+ * count_word - helper function to count the number of words in a string
+ * @s: string to evaluate
+ *
+ * Return: number of words
  */
-char **strtow(char *str)
+int count_word(char *s)
 {
-int i, w, j, k, count, m, wordf;
-char **p, *x;
-w = 0, j = 0, i = 0;
-count = 0;
-if (*str == '\0' || str == NULL)
+int flag = 0, c, w = 0;
+for (c = 0; s[c] != '\0'; c++)
 {
-return (NULL);
+if (s[c] == ' ')
+{
+flag = 0;
 }
-for (i = 0; str[i] != '\0'; i++)
+else if (flag == 0)
 {
-if (str[i] == ' ' && (str[i + 1] != ' ' || str[i + 1] == '\0'))
-{
+flag = 1;
 w++;
 }
 }
-p = (char **)malloc((w + 1) * sizeof(char *));
-if (p == NULL)
+return (w);
+}
+/**
+* **strtow - splits a string into words
+* @str: string to split
+* Return: pointer to an array of strings (Success)
+* or NULL (Error)
+*/
+char **strtow(char *str)
+{
+char **matrix, *tmp;
+int i, k = 0, len = 0, words, c = 0, start, end;
+while (*(str + len))
+{
+len++;
+}
+words = count_word(str);
+if (words == 0)
 {
 return (NULL);
 }
-for (wordf = 0; str[wordf] && j <= w; wordf++)
+matrix = (char **) malloc(sizeof(char *) * (words + 1));
+if (matrix == NULL)
 {
-count = 0;
-if (str[wordf] != ' ')
-{
-for (i = wordf ; str[i] != '\0'; i++)
-{
-if (str[i] == ' ')
-{
-break;
-}
-count++;
-}
-*(p + j) = (char *)malloc((count + 1) * sizeof(char));
-if (*(p + j) == NULL)
-{
-for (k = 0; k <= j; k++)
-{
-x = p[k];
-free(x);
-}
-free(p);
 return (NULL);
 }
-for (m = 0; wordf < i; wordf++)
+for (i = 0; i <= len; i++)
 {
-p[j][m] = str[wordf];
-m++;
+if (str[i] == ' ' || str[i] == '\0')
+{
+if (c)
+{
+end = i;
+tmp = (char *) malloc(sizeof(char) * (c + 1));
+if (tmp == NULL)
+{
+return (NULL);
 }
-p[j][m] = '\0';
-j++;
+while (start < end)
+{
+*tmp++ = str[start++];
+}
+*tmp = '\0';
+matrix[k] = tmp - c;
+k++;
+c = 0;
 }
 }
-p[j] = NULL;
-return (p);
+else if (c++ == 0)
+{
+start = i;
+}
+}
+matrix[k] = NULL;
+return (matrix);
 }
