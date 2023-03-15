@@ -33,8 +33,7 @@ char **matrix, *tmp;
 int i, k = 0, len = 0, words, c = 0, start, end;
 while (*(str + len))
 {
-len++;
-}
+len++; }
 words = count_word(str);
 if (words == 0)
 {
@@ -59,8 +58,7 @@ return (NULL);
 }
 while (start < end)
 {
-*tmp++ = str[start++];
-}
+*tmp++ = str[start++]; }
 *tmp = '\0';
 matrix[k] = tmp - c;
 k++;
@@ -69,8 +67,7 @@ c = 0;
 }
 else if (c++ == 0)
 {
-start = i;
-}
+start = i; }
 }
 matrix[k] = NULL;
 return (matrix);
