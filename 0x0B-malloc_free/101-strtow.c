@@ -47,13 +47,10 @@ while (current_word-- >= 0)
 {
 free(a[current_word]); }
 free(a);
-return (NULL);
-}
+return (NULL); }
 for (n = 0; i < k; i++, n++)
 {
 a[current_word][n] = *(str + i); }
-a[current_word++][n] = '\0';
-}
+a[current_word++][n] = '\0'; }
 a[word_count] = NULL;
-return (a);
-}
+return (a); }
