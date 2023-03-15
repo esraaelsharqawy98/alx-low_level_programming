@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -11,7 +11,7 @@ char **strtow(char *str)
 {
 int i, w, j, k, count, m, wordf;
 char **p, *x;
-w = 0,j = 0,i = 0;
+w = 0, j = 0, i = 0;
 count = 0;
 if (*str == '\0' || str == NULL)
 {
